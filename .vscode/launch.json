@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "rdbg",
+        "name": "Debug Rails with rdbg",
+        "rdbgPath": "bundle exec rdbg",
+        "request": "launch",
+      //   "args": [
+      //     "-b", "192.168.10.8"  // Replace with your desired IP address
+      // ],
+        "cwd": "${workspaceFolder}",
+        "command": "${workspaceFolder}/bin/rails",
+        "script": "server"
+      },
+      {
+        "type": "Ruby",
+        "name": "Debug Sidekiq with rdbg",
+        "request": "launch",
+        "cwd": "${workspaceFolder}",
+        "program": "${workspaceFolder}/bin/sidekiq",
+        "args": [
+          "-e", "development",  // Adjust the environment as needed
+          "-r", "./config/environment"
+        ]
+      }
+    ]
+  }
